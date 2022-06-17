@@ -1,0 +1,6 @@
+Library/
+Logs/
+UserSettings/
+.vscode/settings.json
+Assembly-CSharp.csproj
+GameJayTest.sln
