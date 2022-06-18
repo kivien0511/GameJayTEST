@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
         Move();
         CheckOverEdge();
         SelectCard();
+        FallSpeedUp();
     }
        
     private void OnTriggerEnter2D(Collider2D col)
@@ -209,7 +210,9 @@ public class Player : MonoBehaviour
     void FallSpeedUp() {
         if (rb.velocity.y < 0) {
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
-                
+                if (rb.velocity.y <= 8f) {
+                    rb.velocity.y -= 1f * Time.deltaTime;
+                }
             }   
         }
     }
