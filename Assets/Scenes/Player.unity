@@ -865,10 +865,16 @@ MonoBehaviour:
   specialPlatformPrefab2: {fileID: 290058486233129028, guid: 37468b95552ea524a977de5020954ce2, type: 3}
   numberOfPlatforms: 50
   winPointPrefab: {fileID: 290058486233129028, guid: b2bfbbf50cad6c54e94f39078afb402e, type: 3}
+<<<<<<< HEAD
   levelWidth: 3
   minY: 0.2
   maxY: 1.8
   specialPlatformPrefabList: []
+=======
+  levelWidth: 5
+  minY: 0.5
+  maxY: 2.5
+>>>>>>> b245f0a9ba24d3350bdff677507feb3b59ebaf65
 --- !u!4 &1824524860
 Transform:
   m_ObjectHideFlags: 0
