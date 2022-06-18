@@ -18,7 +18,7 @@ public class Camera : MonoBehaviour
             transform.position = Vector3.SmoothDamp(transform.position, temp, ref velocity, .3f * Time.deltaTime);
         }
 
-        if (player.position.y < transform.position.y - 3f) {
+        if (player.position.y < transform.position.y - 5f) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

@@ -6,7 +6,7 @@ public static class Config
 {
     public static int playerInitHp = 3;
 
-    public static float playerInitMoveSpeed = 10f;
+    public static float playerInitMoveSpeed = 6f;
 
     public static float screenWidthX = 6f;
 
