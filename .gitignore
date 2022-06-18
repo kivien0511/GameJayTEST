@@ -4,3 +4,5 @@ UserSettings/
 .vscode/settings.json
 Assembly-CSharp.csproj
 GameJayTest.sln
+Temp/
+ProjectSettings/
