@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea3bad6e-4304-4937-9f99-fcf8ad750ee1" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Config.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Player.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
