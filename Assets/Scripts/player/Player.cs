@@ -208,11 +208,9 @@ public class Player : MonoBehaviour
     }
 
     void FallSpeedUp() {
-        if (rb.velocity.y < 0) {
+        if (rb.velocity.y < 0 && rb.velocity.y >= -8f) {
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
-                if (rb.velocity.y <= 8f) {
-                    rb.velocity.y -= 1f * Time.deltaTime;
-                }
+                rb.velocity += new Vector2(0f, -1f * Time.deltaTime); ;
             }   
         }
     }
