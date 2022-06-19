@@ -11,14 +11,14 @@ public class Player : MonoBehaviour
     public GameObject cardUI;
     public GameObject hpUI;
     public GameObject hpUIimage;
-    public GameObject changeItem;
-    public List<GameObject> cardItemList;
+    // public GameObject changeItem;
+    // public List<GameObject> cardItemList;
     public List<Card> cardList;
     private int cardListLength;
     private int cardIndex = -1;
 
-    private GameObject initedChangeItem;
-    private GameObject initedCardItem;
+    // private GameObject initedChangeItem;
+    // private GameObject initedCardItem;
 
     private bool boardSpeedFlag = false;
     private int boardSpeed = 0;
@@ -53,21 +53,21 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (
-            initedChangeItem != null
-            && Math.Abs(initedChangeItem.transform.position.y - this.transform.position.y) > 5
-        )
-        {
-            initedChangeItem = null;
-        }
+        // if (
+        //     initedChangeItem != null
+        //     && Math.Abs(initedChangeItem.transform.position.y - this.transform.position.y) > 5
+        // )
+        // {
+        //     initedChangeItem = null;
+        // }
 
-        if (
-            initedCardItem != null
-            && Math.Abs(initedCardItem.transform.position.y - this.transform.position.y) > 3
-        )
-        {
-            initedCardItem = null;
-        }
+        // if (
+        //     initedCardItem != null
+        //     && Math.Abs(initedCardItem.transform.position.y - this.transform.position.y) > 3
+        // )
+        // {
+        //     initedCardItem = null;
+        // }
 
         Move();
         CheckOverEdge();
@@ -80,13 +80,13 @@ public class Player : MonoBehaviour
         if (col.CompareTag("changeItem"))
         {
             flag *= -1;
-            initedChangeItem = null;
+            // initedChangeItem = null;
             Destroy(col.gameObject);
         }
 
         if (col.CompareTag("cardItem"))
         {
-            initedCardItem = null;
+            // initedCardItem = null;
             // 添加卡牌
 
             if (cardIndex == -1)
@@ -147,16 +147,16 @@ public class Player : MonoBehaviour
         {
             if (col.CompareTag("board"))
             {
-                int rand = UnityEngine.Random.Range(1, 10);
-                if (rand > 7)
-                {
-                    InitChangeItem();
-                }
+                // int rand = UnityEngine.Random.Range(1, 10);
+                // if (rand > 7)
+                // {
+                //     InitChangeItem();
+                // }
                 rb.velocity = new Vector2(rb.velocity.x, 8f);
-                if (rand > 5)
-                {
-                    InitCardItem();
-                }
+                // if (rand > 5)
+                // {
+                //     InitCardItem();
+                // }
 
                 if (col.gameObject.name.Contains("1"))
                 {
@@ -382,67 +382,67 @@ public class Player : MonoBehaviour
         }
     }
 
-    void InitChangeItem()
-    {
-        if (initedChangeItem != null)
-        {
-            return;
-        }
+    // void InitChangeItem()
+    // {
+    //     if (initedChangeItem != null)
+    //     {
+    //         return;
+    //     }
 
-        float posX = 2f;
-        float posY = 3f;
-        float randPosX = UnityEngine.Random.Range(
-            this.transform.position.x - posX,
-            this.transform.position.x + posX
-        );
-        float randPosY = UnityEngine.Random.Range(
-            this.transform.position.y + posY,
-            this.transform.position.y + posY * 2
-        );
-        Vector3 changeItemInitPosotion = new Vector3(randPosX, randPosY);
-        initedChangeItem = Instantiate(changeItem, changeItemInitPosotion, Quaternion.identity);
-    }
+    //     float posX = 2f;
+    //     float posY = 3f;
+    //     float randPosX = UnityEngine.Random.Range(
+    //         this.transform.position.x - posX,
+    //         this.transform.position.x + posX
+    //     );
+    //     float randPosY = UnityEngine.Random.Range(
+    //         this.transform.position.y + posY,
+    //         this.transform.position.y + posY * 2
+    //     );
+    //     Vector3 changeItemInitPosotion = new Vector3(randPosX, randPosY);
+    //     initedChangeItem = Instantiate(changeItem, changeItemInitPosotion, Quaternion.identity);
+    // }
 
-    void InitCardItem()
-    {
-        if (initedCardItem != null)
-        {
-            return;
-        }
+    // void InitCardItem()
+    // {
+    //     if (initedCardItem != null)
+    //     {
+    //         return;
+    //     }
 
-        if (cardItemList.Count == 0)
-        {
-            return;
-        }
+    //     if (cardItemList.Count == 0)
+    //     {
+    //         return;
+    //     }
 
-        float posX = 2f;
-        float posY = 3f;
-        float randPosX = UnityEngine.Random.Range(
-            this.transform.position.x - posX,
-            this.transform.position.x + posX
-        );
-        float randPosY = UnityEngine.Random.Range(
-            this.transform.position.y + posY,
-            this.transform.position.y + posY * 2
-        );
-        int cardItemIndex = UnityEngine.Random.Range(0, cardItemList.Count);
-        Vector3 cardItemInitPosotion = new Vector3(randPosX, randPosY);
-        GameObject initObject = new GameObject();
-        initObject = cardItemList[cardItemIndex];
-        int cardFlag = UnityEngine.Random.Range(0, 10);
-        if (cardFlag > 5)
-        {
-            initedCardItem = Instantiate(initObject, cardItemInitPosotion, Quaternion.identity);
-        }
-        else
-        {
-            initedCardItem = Instantiate(
-                initObject,
-                cardItemInitPosotion,
-                Quaternion.Euler(new Vector3(0, 0, -180))
-            );
-        }
-    }
+    //     float posX = 2f;
+    //     float posY = 3f;
+    //     float randPosX = UnityEngine.Random.Range(
+    //         this.transform.position.x - posX,
+    //         this.transform.position.x + posX
+    //     );
+    //     float randPosY = UnityEngine.Random.Range(
+    //         this.transform.position.y + posY,
+    //         this.transform.position.y + posY * 2
+    //     );
+    //     int cardItemIndex = UnityEngine.Random.Range(0, cardItemList.Count);
+    //     Vector3 cardItemInitPosotion = new Vector3(randPosX, randPosY);
+    //     GameObject initObject = new GameObject();
+    //     initObject = cardItemList[cardItemIndex];
+    //     int cardFlag = UnityEngine.Random.Range(0, 10);
+    //     if (cardFlag > 5)
+    //     {
+    //         initedCardItem = Instantiate(initObject, cardItemInitPosotion, Quaternion.identity);
+    //     }
+    //     else
+    //     {
+    //         initedCardItem = Instantiate(
+    //             initObject,
+    //             cardItemInitPosotion,
+    //             Quaternion.Euler(new Vector3(0, 0, -180))
+    //         );
+    //     }
+    // }
 }
 
 public class Card

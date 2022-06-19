@@ -676,7 +676,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217162432}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -719,7 +719,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1119,6 +1119,16 @@ MonoBehaviour:
   levelWidth: 5
   minY: 0.9
   maxY: 1.8
+  itemSpliceCount: 5
+  itemSpliceCountOffset: 4
+  changeItem: {fileID: 6864970220137355533, guid: 9ef0236c8285996408662df992d62905, type: 3}
+  cardSpliceCount: 4
+  cardSpliceCountOffset: 6
+  cardItemList:
+  - {fileID: 2110448138074689665, guid: cbb32083a8e3340418f6851735ba20d4, type: 3}
+  - {fileID: 248422102055007890, guid: 95821200abe4dcb4191e3416ac409008, type: 3}
+  - {fileID: 1975489005642609983, guid: b5f848249a18fb34bb77511aff2fded2, type: 3}
+  cardUI: {fileID: 4560913}
   specialPlatformPrefabList: []
 --- !u!4 &1824524860
 Transform:
