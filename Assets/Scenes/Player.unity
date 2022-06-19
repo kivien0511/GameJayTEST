@@ -181,6 +181,10 @@ PrefabInstance:
       propertyPath: hpUIimage
       value: 
       objectReference: {fileID: 905849616150759734, guid: d16b9039593185141ad77cf0bf3f8391, type: 3}
+    - target: {fileID: 7502673501500966849, guid: d03319099c5c5a644bd9811011ad8833, type: 3}
+      propertyPath: changeItem
+      value: 
+      objectReference: {fileID: 6864970220137355533, guid: 9ef0236c8285996408662df992d62905, type: 3}
     - target: {fileID: 8708552011543752001, guid: d03319099c5c5a644bd9811011ad8833, type: 3}
       propertyPath: m_Name
       value: player
@@ -863,11 +867,11 @@ MonoBehaviour:
   platformPrefab: {fileID: 290058486233129028, guid: ae079091577fae140b71f8cba4193029, type: 3}
   specialPlatformPrefab1: {fileID: 290058486233129028, guid: 62a34a679a50bc2419fe4c9b29f5c1f6, type: 3}
   specialPlatformPrefab2: {fileID: 290058486233129028, guid: 37468b95552ea524a977de5020954ce2, type: 3}
-  numberOfPlatforms: 50
+  numberOfPlatforms: 100
   winPointPrefab: {fileID: 290058486233129028, guid: b2bfbbf50cad6c54e94f39078afb402e, type: 3}
   levelWidth: 5
-  minY: 0.5
-  maxY: 2.5
+  minY: 0.9
+  maxY: 1.8
   specialPlatformPrefabList: []
 --- !u!4 &1824524860
 Transform:

@@ -11,9 +11,12 @@ public class Player : MonoBehaviour
     public GameObject cardUI;
     public GameObject hpUI;
     public GameObject hpUIimage;
+    public GameObject changeItem;
     public List<Card> cardList;
     private int cardListLength;
     private int cardIndex = -1;
+
+    private GameObject initedChangeItem;
 
     private bool boardSpeedFlag = false;
     private int boardSpeed = 0;
@@ -45,6 +48,10 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (Math.Abs(initedChangeItem.position.y - this.transform.position.y) > 5) {
+            initedChangeItem = null;
+        }
+
         Move();
         CheckOverEdge();
         SelectCard();
@@ -53,12 +60,23 @@ public class Player : MonoBehaviour
        
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.CompareTag("changeItem"))
+        {
+            flag *= -1;
+            initedChangeItem = null;
+            Destroy(col.gameObject);
+        }
+
         //下落的时候才计算碰撞。不然角色只要碰到东西就会往上飞
         if (rb.velocity.y <= 0)
         {
             if (col.CompareTag("board"))
             {
-                rb.velocity = new Vector2(rb.velocity.x, 10f);
+                int rand = UnityEngine.Random.Range(1,10);
+                if (rand > 7) {
+                    InitChangeItem();
+                }
+                rb.velocity = new Vector2(rb.velocity.x, 8f);
 
                 if (col.gameObject.name.Contains("1")) {
                     // 特殊地板1
@@ -99,12 +117,12 @@ public class Player : MonoBehaviour
 
     void Move() {
         // print(flag);
-        if (Input.GetKeyDown(KeyCode.R)) { 
-            flag = 1;
-        } 
-        if (Input.GetKeyDown(KeyCode.F)) { 
-            flag = -1;
-        }
+        // if (Input.GetKeyDown(KeyCode.R)) { 
+        //     flag = 1;
+        // } 
+        // if (Input.GetKeyDown(KeyCode.F)) { 
+        //     flag = -1;
+        // }
 
         float horizontalAxis = 0;
         horizontalAxis = Input.GetAxis("Horizontal");
@@ -208,13 +226,27 @@ public class Player : MonoBehaviour
     }
 
     void FallSpeedUp() {
-        if (rb.velocity.y < 0 && rb.velocity.y >= -8f) {
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
-                rb.velocity += new Vector2(0f, -1f * Time.deltaTime); ;
+        if (rb.velocity.y < 0) {
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) {
+                if (rb.velocity.y >= -8f){
+                    rb.velocity += new Vector2(0f, -1f * Time.deltaTime); 
+                }
             }   
         }
     }
 
+    void InitChangeItem() {
+        if (initedChangeItem != null) {
+            return;
+        }
+
+        float posX = 2f;
+        float posY = 3f;
+        float randPosX = UnityEngine.Random.Range(this.transform.position.x - posX, this.transform.position.x + posX);
+        float randPosY = UnityEngine.Random.Range(this.transform.position.y + posY, this.transform.position.y + posY * 2);
+        Vector3 changeItemInitPosotion = new Vector3(randPosX, randPosY);
+        initedChangeItem = Instantiate(changeItem, changeItemInitPosotion, Quaternion.identity);
+    }
 }
 
 public class Card {
