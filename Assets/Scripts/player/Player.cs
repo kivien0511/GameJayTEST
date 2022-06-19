@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         {
             if (col.CompareTag("board"))
             {
-                rb.velocity = new Vector2(0f, 10f);
+                rb.velocity = new Vector2(rb.velocity.x, 10f);
 
                 if (col.gameObject.name.Contains("1")) {
                     // 特殊地板1
