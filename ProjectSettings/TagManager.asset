@@ -8,6 +8,7 @@ TagManager:
   - board
   - win
   - changeItem
+  - cardItem
   layers:
   - Default
   - TransparentFX
