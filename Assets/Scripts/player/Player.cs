@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        flag = 1;
         DrawHpUI();
         cardList = new List<Card>();
         cardListLength = Config.cardListLength;
@@ -48,7 +49,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Math.Abs(initedChangeItem.position.y - this.transform.position.y) > 5) {
+        if (initedChangeItem != null && Math.Abs(initedChangeItem.transform.position.y - this.transform.position.y) > 5) {
             initedChangeItem = null;
         }
 
